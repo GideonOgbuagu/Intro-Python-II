@@ -1,4 +1,6 @@
 from room import Room
+from player import Player
+import textwrap
 
 # Declare all the rooms
 
@@ -37,7 +39,21 @@ room['treasure'].s_to = room['narrow']
 # Main
 #
 
+# print("Start the Adventure!!!")
+
+   
+
 # Make a new player object that is currently in the 'outside' room.
+player1 = Player("John", room["outside"])
+# player2 = Player("player1", room["outside"])
+# print(player1.name)
+# print(player1.current_room.name)
+# print(player1.current_room.n_to)
+
+# print(player1.name)
+# print(player1.current_room)
+# print(player1.current_room)
+# print(player1.current_room)
 
 # Write a loop that:
 #
@@ -49,3 +65,12 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+while True:
+    print(player1.current_room.name)
+    print(textwrap.fill(player1.current_room.description))
+
+    carninal_direction = input("Where do you what to go?:")
+    if carninal_direction is "North".lower() or "N".lower():
+        print(room['foyer'].name)
+        print(room['foyer'].description)
+    break
