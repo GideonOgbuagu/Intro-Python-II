@@ -69,8 +69,36 @@ while True:
     print(player1.current_room.name)
     print(textwrap.fill(player1.current_room.description))
 
-    carninal_direction = input("Where do you what to go?:")
-    if carninal_direction is "North".lower() or "N".lower():
+    direction = input("Where do you what to go?:")
+    if room['outside'] and direction is "north".lower() or "n".lower():
         print(room['foyer'].name)
         print(room['foyer'].description)
-    break
+        continue
+    elif room['foyer'] and direction is "south".lower() or "s".lower():
+        print(room['outside'].name)
+        print(room['outside'].description)
+        
+    elif room['foyer'] and direction is "nouth".lower() or "n".lower():
+        print(room['overlook'].name)
+        print(room['overlook'].description)
+        
+    elif room['foyer'] and direction is "east".lower() or "e".lower():
+        print(room['narrow'].name)
+        print(room['narrow'].description)
+        
+    elif room['overlook'] and direction is "south".lower() or "s".lower():
+        print(room['foyer'].name)
+        print(room['foyer'].description)
+        
+    elif room['narrow'] and direction is "west".lower() or "w".lower():
+        print(room['foyer'].name)
+        print(room['foyer'].description)
+        
+    elif room['narrow'] and direction is "north".lower() or "n".lower():
+        print(room['treasure'].name)
+        print(room['treasure'].description)
+        
+    elif room['treasure'] and direction is "south".lower() or "s".lower():
+        print(room['narrow'].name)
+        print(room['narrow'].description)
+        break
